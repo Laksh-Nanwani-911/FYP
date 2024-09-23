@@ -1,0 +1,31 @@
+# In root directory .gitignore
+
+# Ignore node_modules from both frontend and backend
+frontend/node_modules/
+backend/node_modules/
+
+# Ignore environment files
+frontend/.env
+backend/.env
+
+# Ignore build files
+frontend/build/
+backend/dist/
+
+# Node.js dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment Variables
+.env
+
+# Build files
+dist/
+build/
+
+# MacOS system files
+.DS_Store
