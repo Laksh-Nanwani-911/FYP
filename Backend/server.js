@@ -15,12 +15,9 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 app.use(cors(
-  {origin: process.env.Fontend_URL,
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-    allowedHeaders: "Content-Type,Authorization",
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
+  {origin: 'https://techit-eight.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // specify the methods allowed
+    credentials: true // if you are using credentials such as cookies
   }
 ));
 
