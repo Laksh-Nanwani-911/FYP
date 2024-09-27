@@ -14,7 +14,15 @@ const morgan = require("morgan");
 
 const cors = require("cors");
 
-app.use(cors());
+app.use(cors(
+  {origin: process.env.Fontend_URL,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    allowedHeaders: "Content-Type,Authorization",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+  }
+));
 
 app.use(express.json({ limit: "50mb" }));
 
