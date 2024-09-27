@@ -15,13 +15,15 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 app.use(cors(
-  {origin: 'https://techit-eight.vercel.app',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // specify the methods allowed
-    credentials: true // if you are using credentials such as cookies
+  {origin: process.env.Fontend_URL,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    allowedHeaders: "Content-Type,Authorization",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
   }
 ));
 
-app.options('*', cors());
 app.use(express.json({ limit: "50mb" }));
 
 app.use(
